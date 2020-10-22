@@ -1,5 +1,6 @@
 nav {
   div {
+    margin: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +8,10 @@ nav {
   }
 
   ul {
-    margin: 1.5em;
+    margin-left: 20em;
+    margin-right: 20em;
+    margin-top: 5em;
+    margin-bottom: 2em;
     padding: 0;
     list-style: none;
     display: flex;
@@ -17,6 +21,6 @@ nav {
   }
 
   li { 
-      display: flex; 
+      display: inline-block; 
     }
 }

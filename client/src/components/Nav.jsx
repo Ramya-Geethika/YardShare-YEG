@@ -6,7 +6,12 @@ function Navbar() {
   return (
     <nav>
       <div>
-        Good worm Gardens
+        <h1>Yard Share YEG</h1>
+        <img
+          className="logo--centered"
+          src="Images/logo.png"
+          alt="Interview Scheduler"
+        />
       </div>
 
       <ul>
