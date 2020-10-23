@@ -1,7 +1,7 @@
 import React from 'react';
 import "./App.scss";
 import Navbar from './Nav';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route , Switch} from 'react-router-dom';
 import Home from './Home';
 import Connectyards from './Connectyards';
 import Gardeningguide from './Gardeningguide';
@@ -13,6 +13,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
+        <Switch>
         <Route exact path='/'>
           <Home />
         </Route>
@@ -28,7 +29,12 @@ function App() {
         <Route path='/contactus'>
           <Contactus />
         </Route>
+        <Route path='*'>
+          <h1>404 - Not Found</h1>
+        </Route>
+        </Switch>
       </Router>
+    
     </div>
   );
 }
