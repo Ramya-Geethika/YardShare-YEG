@@ -30,7 +30,7 @@ module.exports = db => {
       .catch((err) => err.message);
   };
 
-  const addNewLandholder = ({ category, name, email, address, message }) => {
+  const addNewLandholder = ({ category, name, email, address, message}) => {
     const query = {
       text: `INSERT INTO landholders (category, name, email, address, message) 
              VALUES($1, $2, $3, $4, $5) RETURNING *`,

@@ -13,27 +13,24 @@ function PostListing(props) {
     message: ""
   });
 
-  function submit() {
-    console.log(formData);
-    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const urlGrowers = "http://localhost:3003/growers";
-    return (axios.put((urlGrowers), formData)
+  function axiosCall (url) {
+      (axios.put((url), formData)
       .then(() => {
-        return setFormData({ ...formData });
+        setFormData({ ...formData });
       }));
+  }
 
+  function submit() {
+    const urlGrowers = "http://localhost:3003/growers";
     const urlLandholders = "http://localhost:3003/landholders";
-    return (axios.put((urlLandholders), formData)
-      .then(() => {
-        return setFormData({ ...formData });
-      }));
+    console.log(formData.category);
+    ((formData.category === 'f') ?  axiosCall(urlGrowers): axiosCall(urlLandholders))
   }
 
   const handleChange = (event) => {
     const newFormData = { ...formData }
     newFormData[event.target.name] = event.target.value;
-    setFormData(newFormData)
-    console.log(newFormData);
+    setFormData(newFormData);
   }
 
   return (
