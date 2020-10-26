@@ -8,16 +8,18 @@ nav {
   }
 
   ul {
-    margin-left: 20em;
-    margin-right: 20em;
+    margin-left: 15em;
+    margin-right: 10em;
     margin-top: 5em;
     margin-bottom: 2em;
-    padding: 0;
+    //width: 500px;
+    //padding: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    //word-spacing: 30px;
   }
 
   li { 

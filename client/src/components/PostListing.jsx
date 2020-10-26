@@ -5,33 +5,36 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function PostListing(props) {
-    const [formData, setFormData] = useState({
-      category : "",
-      name : "",
-      email : "",
-      address : "",
-      message : ""
-    });
+  const [formData, setFormData] = useState({
+    category: "",
+    name: "",
+    email: "",
+    address: "",
+    message: ""
+  });
 
-  function submit () {
+  function submit() {
     console.log(formData);
-   /* const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = "http://localhost:3003/growers";
-    return (axios.put((proxyurl + url),formData)
+    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const urlGrowers = "http://localhost:3003/growers";
+    return (axios.put((urlGrowers), formData)
       .then(() => {
-        return setFormData({...formData});
-      })); 
-*/
+        return setFormData({ ...formData });
+      }));
+
+    const urlLandholders = "http://localhost:3003/landholders";
+    return (axios.put((urlLandholders), formData)
+      .then(() => {
+        return setFormData({ ...formData });
+      }));
   }
 
   const handleChange = (event) => {
-    const newFormData = {...formData} 
+    const newFormData = { ...formData }
     newFormData[event.target.name] = event.target.value;
     setFormData(newFormData)
     console.log(newFormData);
   }
-  
-
 
   return (
     <body class="body">
@@ -42,15 +45,15 @@ function PostListing(props) {
         <div class="content">
           <form class='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
             <label for="category">I am a</label>
-            <select class='label' onChange = {handleChange} id="category" name="category" value = {formData.category} >
-              <option value = ""></option>
-              <option value="landholder">Landholder</option>
-              <option value="grower">Grower</option>
+            <select class='label' onChange={handleChange} id="category" name="category" value={formData.category} >
+              <option value=""></option>
+              <option value="t">Landholder</option>
+              <option value="f">Grower</option>
             </select>
-            <input class='input'  name = "name"placeholder='Name' onChange = {handleChange} value = {formData.name}/>
-            <input class='input'  name = "email" placeholder='Email'  onChange = {handleChange} value = {formData.email}/>
-            <input class='input' name = "address" placeholder='Address'  onChange = {handleChange} value = {formData.address}/>
-            <textarea class='input' name ="message" placeholder='Message' onChange = {handleChange} value = {formData.message}/>
+            <input class='input' name="name" placeholder='Name' onChange={handleChange} value={formData.name} />
+            <input class='input' name="email" placeholder='Email' onChange={handleChange} value={formData.email} />
+            <input class='input' name="address" placeholder='Address' onChange={handleChange} value={formData.address} />
+            <textarea class='input' name="message" placeholder='Message' onChange={handleChange} value={formData.message} />
           </form>
         </div>
         <div class="actions">

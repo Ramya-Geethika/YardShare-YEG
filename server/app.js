@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const logger = require('morgan');
 const db = require('./db');
 const { getGrowers, addNewGrower, getLandholders, addNewLandholder } = require('./helpers/dbHelpers')(db);
@@ -14,6 +15,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -31,14 +33,14 @@ app.get('/landholders', (req, res) => {
     .catch((err) => res.json({ err }));
 });
 
-app.post('/growers', (req, res) => {
+app.put('/growers', (req, res) => {
   const grower = req.body;
   addNewGrower(grower)
     .then(grower => res.json(grower))
     .catch((err) => res.json({ err }));
 });
 
-app.post('/landholders', (req, res) => {
+app.put('/landholders', (req, res) => {
   const landholder = req.body;
   addNewLandholder(landholder)
     .then(landholder => res.json(landholder))
