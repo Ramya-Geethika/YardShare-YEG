@@ -3,11 +3,12 @@ import Button from './Button';
 import useVisualMode from '../hooks/useVisualMode';
 import PostListing from './PostListing';
 
-function Connectyards() {
+function Connectyards(props) {
+
   const POSTLISTING = "POSTLISTING";
   const BUTTON = "BUTTON";
   const { mode, transition, back } = useVisualMode(BUTTON);
-
+  
   return (
     <>
       <p>
