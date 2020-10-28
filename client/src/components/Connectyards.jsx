@@ -2,12 +2,25 @@ import React from 'react';
 import Button from './Button';
 import useVisualMode from '../hooks/useVisualMode';
 import PostListing from './PostListing';
+import axios from 'axios';
 
 function Connectyards(props) {
 
   const POSTLISTING = "POSTLISTING";
   const BUTTON = "BUTTON";
   const { mode, transition, back } = useVisualMode(BUTTON);
+
+  
+  const getLatLng = (accessToken) => {
+    axios.get(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=&formData.address`
+    ).then(response => {
+      console.log(response.data);
+    }).catch(error => console.log)
+  }
+
+  getLatLng("pk.3d27a7c656ceee3b9160fa36a8028e40");
+
+
   
   return (
     <>

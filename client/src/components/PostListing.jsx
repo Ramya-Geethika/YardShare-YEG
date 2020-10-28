@@ -14,18 +14,27 @@ function PostListing(props) {
   });
 
   function axiosCall (url) {
-      (axios.put((url), formData)
-      .then(() => {
-        setFormData({ ...formData });
-      }));
-  }
+    (axios.put((url), formData)
+    .then(() => {
+      setFormData({ ...formData });
+    }));
+}
 
   function submit() {
     const urlGrowers = "http://localhost:3003/growers";
     const urlLandholders = "http://localhost:3003/landholders";
     console.log(formData.category);
+   /* const getLatLng = (accessToken) => {
+      axios.get(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=Empire%20State%20Building&format=json`,
+      ).then(response => {
+        console.log(response.data);
+      }).catch(error => console.log)
+    }
+    getLatLng("pk.3d27a7c656ceee3b9160fa36a8028e40"); 
+    */
     ((formData.category === 'f') ?  axiosCall(urlGrowers): axiosCall(urlLandholders))
   }
+
 
   const handleChange = (event) => {
     const newFormData = { ...formData }
