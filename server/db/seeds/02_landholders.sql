@@ -1,2 +1,2 @@
-INSERT INTO landholders (id, category, name, email, address, message, grower_id) 
-VALUES(1, '1', 'Guru', 'guru@gmail.com', '1234, Cross st', 'sdjkdhjdhvhdsdhgfgdhfdjfhdkjgh', 1);
+INSERT INTO landholders (id, category, name, email, address, message, latitude, longitude) 
+VALUES(1, '1', 'Guru', 'guru@gmail.com', '1234, Cross st', 'sdjkdhjdhvhdsdhgfgdhfdjfhdkjgh', 47.86274, 13.78654);

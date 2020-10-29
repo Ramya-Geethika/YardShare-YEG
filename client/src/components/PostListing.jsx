@@ -10,7 +10,9 @@ function PostListing(props) {
     name: "",
     email: "",
     address: "",
-    message: ""
+    message: "",
+    latitude: 0,
+    longitude: 0
   });
 
   //Helper function for axios call
@@ -27,7 +29,10 @@ function PostListing(props) {
     const getLatLng = (accessToken) => {
       axios.get(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${formData.address}&format=json`,
       ).then(response => {
-        console.log(response.data);
+        const newFormData = { ...formData }
+        newFormData.latitude = response.data[0].lat;
+        newFormData.longitude = response.data[0].lon;
+        setFormData({ ...newFormData });
       }).catch(error => console.log)
     }
     getLatLng('pk.f868e8b38dee29678f3eb19a3e25e7f1');
