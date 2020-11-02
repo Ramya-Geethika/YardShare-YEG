@@ -1,6 +1,23 @@
 nav {
+  body, html {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Container {
+    width: 90%;
+    min-width: 500px;
+    margin: auto;
+}
+
+  
+
+  h1 {
+    font-size: 3em;
+  }
+
   div {
-    margin: 2em;
+    margin-right: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,17 +29,16 @@ nav {
     margin-right: 10em;
     margin-top: 5em;
     margin-bottom: 2em;
-    //width: 500px;
-    //padding: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    //word-spacing: 30px;
   }
 
   li { 
       display: inline-block; 
+      margin-right: 100px;
+      font-size: 1em;
     }
-}
+} 
