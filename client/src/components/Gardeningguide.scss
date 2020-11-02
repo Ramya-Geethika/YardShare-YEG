@@ -6,14 +6,23 @@ display: flex;
 
 .column{
   flex: 50%;
+  
 }
+
 
 ul{
+  
   list-style: none;
-}
 
 li { 
+
   display: flex;
   margin-bottom: 15px;
+  align-items: left;
+  justify-content: center;
+
 }
+
+}
+
 }

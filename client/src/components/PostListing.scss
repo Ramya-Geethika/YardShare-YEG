@@ -14,10 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 1.5em;
 }
 
 .input {
   margin: 2em;
+  font-size: 1em;
 }
 
 .form {
@@ -82,7 +84,6 @@ body {
     width: 0%;
   }
 }
-
 
   @supports (offset-rotate: 0deg) {
     // OLD
