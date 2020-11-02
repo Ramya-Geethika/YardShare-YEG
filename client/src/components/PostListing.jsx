@@ -16,30 +16,33 @@ function PostListing(props) {
   });
 
 
+
+  
+
   //Helper function for axios call
-  function axiosCall(url) {
-    (axios.put((url), formData)
+  function axiosCall(url, data) {
+    axios.put((url), data)
+
       .then(() => {
-        setFormData({ ...formData });
-      }));
+        setFormData({ ...data });
+        props.submit();
+      });
   }
 
 
   function submit() {
     const urlGrowers = "http://localhost:3003/growers";
     const urlLandholders = "http://localhost:3003/landholders";
-  
-    const getLatLng = (accessToken) => {
-      axios.get(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${formData.address}&format=json`,
-      ).then(response => {
-        const newFormData = { ...formData }
-        newFormData.latitude = response.data[0].lat;
-        newFormData.longitude = response.data[0].lon;
-        setFormData({ ...newFormData });
-      }).catch(error => console.log)
-    }
-    getLatLng('pk.3d27a7c656ceee3b9160fa36a8028e40');
-    ((formData.category === 'f') ? axiosCall(urlGrowers) : axiosCall(urlLandholders))
+
+    const accessToken = 'pk.f868e8b38dee29678f3eb19a3e25e7f1';
+    const newFormData = { ...formData }
+    axios.get(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${formData.address}&format=json`,
+    ).then(response => {
+      newFormData.latitude = response.data[0].lat;
+      newFormData.longitude = response.data[0].lon;
+      setFormData({ ...newFormData });
+      ((formData.category === 'f') ? axiosCall(urlGrowers, newFormData) : axiosCall(urlLandholders, newFormData))
+    }).catch(error => console.log)
   }
 
   //Set the form input data
@@ -78,6 +81,5 @@ function PostListing(props) {
     </body>
   );
 }
-
 
 export default PostListing;
