@@ -11,7 +11,7 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.MAIL_API);
 
 app.use(logger('dev'));
 app.use(express.json());

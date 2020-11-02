@@ -12,18 +12,15 @@ function Contactus(props) {
     message: ""
   });
 
-    
-    
-
   function submit() {
 
-    const messageTxt = 'Name: ' + `${formData.name}` + '\n Email: ' + `${formData.email}` + '\n Address:' + `${formData.address}` + '\n Message:' + `${formData.message}`;
+    //const messageTxt = 'Name: ' + `${formData.name}` + '\n Email: ' + `${formData.email}` + '\n Address:' + `${formData.address}` + '\n Message:' + `${formData.message}`;
 
     const email = {
-      recipient: 'gurulakshmi.varadharaj@gmail.com',
-      sender: 'gurulakshmi.ptme@gmail.com',
+      recipient: 'xxx@gmail.com',
+      sender: 'yyy@gmail.com',
       subject: 'Enquiry in contactus form',
-      text: messageTxt
+      text: 'test mail'
     }
 
     axios.get(`http://localhost:3003/contactus/send-email?recipient=${email.recipient}&sender=${email.sender}&topic=${email.subject}&text=${email.text}`)
