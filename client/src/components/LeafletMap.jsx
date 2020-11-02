@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import './LeafletMap.scss';
-import axios from 'axios';
+import L from 'leaflet';
 
-function LeafletMap() {
+function LeafletMap(props) {
 
-  const [position, setPosition] = useState({
-    lat: 53.631611,
-    lng: -113.323975,
-    zoom: 8,
-    markerData: [[53.5385615, -113.6315854], [53.5661921, -113.5217776]],
-    growersData: [],
-    landholdersData: []
-  });
-
-  useEffect(() => {
-    Promise.all([
-      axios.get("/growers"),
-      axios.get("/landholders"),
-    ]).then((all) => {
-      setPosition(prev => ({ ...prev, growersData: all[0].data, landholdersData: all[1].data }));
-    })
-  }, []);
-
-  const copyPosition = { ...position };
+  const copyPosition = { ...props.mapInput };
 
   const LatLngTuple = [copyPosition.lat, copyPosition.lng];
+
+  const growerIcon = new L.Icon({
+    iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+    iconAnchor: [5, 55],
+    popupAnchor: [10, -44],
+    iconSize: [25, 55],
+    shadowSize: [68, 95],
+    shadowAnchor: [20, 92],
+  })
+
+  const landholderIcon = new L.Icon({
+    iconUrl: 'Images/icons8-earth-care.png',
+    iconAnchor: [5, 55],
+    popupAnchor: [10, -44],
+    iconSize: [25, 55],
+    shadowSize: [68, 95],
+    shadowAnchor: [20, 92],
+  })
 
   return (
     <Map id='mapId' center={LatLngTuple} zoom={copyPosition.zoom}>
@@ -33,12 +33,21 @@ function LeafletMap() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors">
       </TileLayer>
-      {copyPosition.markerData.map((element, index) =>
-        <Marker key={index} position={element}>
+      {copyPosition.growersData.map((element, index) =>
+        <Marker key={index} position={[element.latitude, element.longitude]} icon={growerIcon}>
           <Popup>
-            <span style={{ display: "block" }}>{copyPosition.growersData.map((element) =>
-              element.name
-            )}</span>
+            <span style={{ display: "block" }}>
+              {element.name}<br />{element.email}
+            </span>
+          </Popup>
+        </Marker>
+      )}
+      {copyPosition.landholdersData.map((elm, indx) =>
+        <Marker key={indx} position={[elm.latitude, elm.longitude]} icon={landholderIcon}>
+          <Popup>
+            <span style={{ display: "block" }}>
+              {elm.name}<br />{elm.email}
+            </span>
           </Popup>
         </Marker>
       )}

@@ -9,15 +9,9 @@ body {
   align-items: center;
 }
 
-.label {
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .input {
   margin: 2em;
+  font-size: 1em;
 }
 
 .form {
@@ -82,6 +76,7 @@ body {
     width: 0%;
   }
 }
+
 
   @supports (offset-rotate: 0deg) {
     // OLD
