@@ -7,7 +7,9 @@ category BOOLEAN NOT NULL,
 name VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL,
 address TEXT NOT NULL, 
-message TEXT NOT NULL);
+message TEXT NOT NULL,
+latitude NUMERIC NOT NULL,
+longitude NUMERIC NOT NULL);
 
 CREATE TABLE landholders(
 id SERIAL PRIMARY KEY, 
@@ -15,5 +17,6 @@ category BOOLEAN NOT NULL,
 name VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL,
 address TEXT NOT NULL, 
-message TEXT NOT NULL
-);
+message TEXT NOT NULL,
+latitude NUMERIC NOT NULL,
+longitude NUMERIC NOT NULL);

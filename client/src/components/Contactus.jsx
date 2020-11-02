@@ -14,6 +14,7 @@ function Contactus(props) {
 
   function submit (url) {
     
+    
   }
 
   const handleChange = (event) => {
@@ -23,11 +24,8 @@ function Contactus(props) {
   }
 
   return (
-    <body class="body">
-      <div class="background">
-        <div class="blur"></div>
-      </div>
-      <div class="modal" id="modal">
+    <body>
+      <div>
         <div class="content">
           <form class='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
             <input class='input' name="name" placeholder='Name' onChange={handleChange} value={formData.name} />
@@ -37,7 +35,6 @@ function Contactus(props) {
           </form>
         </div>
         <div class="actions">
-          <Button class="toggle-button" onClick={props.close}>Close</Button>
           <Button class="toggle-button" onClick={submit}>Submit</Button>
         </div>
       </div>
