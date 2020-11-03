@@ -1,21 +1,27 @@
-.div{
+@import "../styles/variables.scss";
+
+/****.div{
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: center;
 }
 
-p2 {
-  margin-left: 10em;
-  margin-right: 10em;
-  font-size: 1em;
-  justify-content: left;
-  flex-direction: column;
-  
-}
-
-button {
+.yardsPara {
+  margin-left: 13em;
+  margin-right: 13em;
   margin-top: 2em;
   margin-bottom: 2em;
+  text-align: justify;
+  font-size: 1.5em;
+  font-family: $font-family;
+}****/
+
+.div {
+  margin-left: 13em;
+    margin-right: 13em;
+    text-align: justify;
+    font-size: 1.5em;
+    font-family: $font-family;
 }
 

@@ -1,16 +1,6 @@
-html, body {
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .label {
-  margin: 2rem;
+  width: 650px;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,7 +8,8 @@ body {
 }
 
 .input {
-  margin: 2em;
+  width: 650px;
+  margin-bottom: 1em;
   font-size: 1em;
 }
 
@@ -30,7 +21,7 @@ body {
 }
 
 .modal {
-  width: 500px;
+  width: 700px;
   background: white;
   border: 1px solid #ccc;
   transition: 1.1s ease-out;
@@ -56,34 +47,6 @@ body {
     height: 100vh;
     width: 100%;
   }
-  
-  // Background Blur using backdrop-filter
-  .blur {
-    animation: changeWidth 8s ease-in-out infinite;
-    background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
-    backdrop-filter: blur(8px); // This be the blur
-    height: 100vh;
-    width: 50%;
-  }
-
-  // Animation that changes the width of the blur
-@keyframes changeWidth {
-  0% {
-    width: 0%;
-  }
-  5% {
-    width: 0%;
-  }
-  50% {
-    width: 50%;
-  }
-  80% {
-    width: 50%;
-  }
-  100% {
-    width: 0%;
-  }
-}
 
   @supports (offset-rotate: 0deg) {
     // OLD

@@ -57,22 +57,16 @@ function Contactus(props) {
   }
 
   return (
-    <body>
-      <div>
-        <div class="content">
-          <section className="validation">{error}</section>
-          <form class='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
-            <input class='input' name="name" placeholder='Name' onChange={handleChange} value={formData.name} />
-            <input class='input' name="email" placeholder='Email' onChange={handleChange} value={formData.email} />
-            <input class='input' name="address" placeholder='Address' onChange={handleChange} value={formData.address} />
-            <textarea class='input' name="message" placeholder='Message' onChange={handleChange} value={formData.message} />
-          </form>
-        </div>
-        <div class="actions">
-          <Button class="toggle-button" onClick={submit}>Submit</Button>
-        </div>
-      </div>
-    </body>
+    <div className='divClass'>
+      <section className="validation">{error}</section>
+      <form className='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
+        <input className='input1' name="name" placeholder='Name' onChange={handleChange} value={formData.name} />
+        <input className='input1' name="email" placeholder='Email' onChange={handleChange} value={formData.email} />
+        <input className='input1' name="address" placeholder='Address' onChange={handleChange} value={formData.address} />
+        <textarea className='text' name="message" placeholder='Message' onChange={handleChange} value={formData.message} />
+      </form>
+      <Button onClick={submit}>Submit</Button>
+    </div>
   );
 
 }

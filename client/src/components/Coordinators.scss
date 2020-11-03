@@ -1,4 +1,4 @@
-div {
+/****div {
 
   p {
     display: flex;
@@ -12,4 +12,13 @@ div {
     margin-bottom: 30px;
   }
 
+}****/
+@import "../styles/variables.scss";
+
+.coordStyle {
+  margin-left: 13em;
+  margin-right: 13em;
+  text-align: justify;
+  font-size: 1.5em;
+  font-family: $font-family;
 }

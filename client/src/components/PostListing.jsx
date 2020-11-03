@@ -17,7 +17,7 @@ function PostListing(props) {
 
 
 
-  
+
 
   //Helper function for axios call
   function axiosCall(url, data) {
@@ -54,10 +54,7 @@ function PostListing(props) {
   }
 
   return (
-    <body className="body">
-      <div className="background">
-        <div className="blur"></div>
-      </div>
+    <div>
       <div className="modal" id="modal">
         <div className="content">
           <form className='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
@@ -78,7 +75,7 @@ function PostListing(props) {
           <Button className="toggle-button" onClick={submit}>Submit</Button>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

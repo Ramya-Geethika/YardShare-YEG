@@ -1,10 +1,18 @@
 @import "../styles/variables.scss";
 
-p {
+/***.homeStyle {
     margin-left: 13em;
     margin-right: 13em;
     margin-top: 2em;
     margin-bottom: 2em;
+    text-align: justify;
+    font-size: 1.5em;
+    font-family: $font-family;
+}****/
+
+.homeStyle {
+    margin-left: 13em;
+    margin-right: 13em;
     text-align: justify;
     font-size: 1.5em;
     font-family: $font-family;

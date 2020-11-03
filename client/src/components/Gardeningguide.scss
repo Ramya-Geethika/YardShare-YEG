@@ -1,5 +1,5 @@
 
-div{
+/****div{
 .row {
 display: flex;
 }
@@ -25,4 +25,29 @@ li {
 
 }
 
-}
+}****/
+
+.row {
+  display: flex;
+  }
+  
+.column {
+  margin-left: 20em;
+  margin-right: 13em;
+  flex: 50%;
+  }
+
+  ul{
+  
+    list-style: none;
+  
+  li { 
+
+    display: flex;
+    margin-bottom: 15px;
+    align-items: left;
+    justify-content: left;
+  
+  }
+  
+  }
