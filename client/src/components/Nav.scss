@@ -1,34 +1,10 @@
-nav {
-  body, html {
-    margin: 0px;
-    padding: 0px;
-}
-
-.Container {
-    width: 90%;
-    min-width: 500px;
-    margin: auto;
-}
-
-  
-
-  h1 {
-    font-size: 3em;
-  }
-
-  div {
-    margin-right: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
+.navBar {
   ul {
     margin-left: 15em;
     margin-right: 10em;
     margin-top: 5em;
     margin-bottom: 2em;
+    //position: fixed;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -42,3 +18,8 @@ nav {
       font-size: 1em;
     }
 } 
+
+/***top: 0;
+  margin-left: 40em;
+  margin-right: 30em;
+  position: fixed;***/

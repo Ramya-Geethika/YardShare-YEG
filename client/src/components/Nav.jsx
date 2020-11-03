@@ -4,16 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav>
-      <div>
-        <h1>Yard Share YEG</h1>
-        <img
-          className="logo--centered"
-          src="Images/logo.png"
-          alt="Interview Scheduler"
-        />
-      </div>
-
+    <nav className='navBar'>
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/connectyards'>Connect Yards</Link></li>
@@ -21,7 +12,6 @@ function Navbar() {
         <li><Link to='/coordinators'>Co-ordinators</Link></li>
         <li><Link to='/contactus'>Contact Us</Link></li>
       </ul>
-
     </nav>
   )
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./App.scss";
+import Logo from './Logo';
 import Navbar from './Nav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Logo />
         <Navbar />
         <Switch>
           <Route exact path='/'>
