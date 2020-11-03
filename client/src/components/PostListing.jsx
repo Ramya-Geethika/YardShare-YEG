@@ -31,6 +31,27 @@ function PostListing(props) {
 
 
   function submit() {
+    
+    if (formData.name === '') {
+      setError('Name cannot be empty');
+      console.log(error);
+      return;
+    }
+    if (formData.email === '') {
+      setError('Email cannot be empty');
+      return;
+    }
+    if (formData.address === '') {
+      setError('Address cannot be empty');
+      return;
+    }
+    if (formData.message === '') {
+      setError('Message cannot be empty');
+      return;
+    }
+
+    setError('');
+
     const urlGrowers = "http://localhost:3003/growers";
     const urlLandholders = "http://localhost:3003/landholders";
 
@@ -60,6 +81,7 @@ function PostListing(props) {
       </div>
       <div className="modal" id="modal">
         <div className="content">
+        <section className="validation">{error}</section>
           <form className='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
             <label for="category">I am a</label>
             <select className='label' onChange={handleChange} id="category" name="category" value={formData.category} >
