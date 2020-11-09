@@ -18,8 +18,8 @@ function Contactus(props) {
     const messageTxt = `Name: ${formData.name} \n Email: ${formData.email} \n Address: + ${formData.address}  \n Message: ${formData.message}`;
 
     const mail = {
-      recipient: 'gurulakshmi.varadharaj@gmail.com',
-      sender: 'gurulakshmi.ptme@gmail.com',
+      recipient: 'gururamya.yardshare@gmail.com',
+      sender: 'gururamya.yardshare@gmail.com',
       subject: 'Enquiry in contactus form',
       text: messageTxt
     }
@@ -58,14 +58,21 @@ function Contactus(props) {
 
   return (
     <div className='divClass'>
-      <section className="validation">{error}</section>
+      <section className="validation1">{error}</section>
       <form className='form' autoComplete="off" onSubmit={event => event.preventDefault()}>
         <input className='input1' name="name" placeholder='Name' onChange={handleChange} value={formData.name} />
         <input className='input1' name="email" placeholder='Email' onChange={handleChange} value={formData.email} />
         <input className='input1' name="address" placeholder='Address' onChange={handleChange} value={formData.address} />
         <textarea className='text' name="message" placeholder='Message' onChange={handleChange} value={formData.message} />
       </form>
-      <Button onClick={submit}>Submit</Button>
+      <Button className='button' onClick={submit}>Submit</Button>
+      < div >
+        <img
+          className='contactImage'
+          src="Images/Gardeningedu.png"
+          alt="YardShare"
+        />
+      </div >
     </div>
   );
 

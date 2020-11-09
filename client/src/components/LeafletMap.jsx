@@ -10,7 +10,7 @@ function LeafletMap(props) {
   const LatLngTuple = [copyPosition.lat, copyPosition.lng];
 
   const growerIcon = new L.Icon({
-    iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+    iconUrl: 'Images/Growers.jpg',
     iconAnchor: [5, 55],
     popupAnchor: [10, -44],
     iconSize: [25, 55],
@@ -38,7 +38,7 @@ function LeafletMap(props) {
         <Marker key={index} position={[element.latitude, element.longitude]} icon={growerIcon}>
           <Popup>
             <span style={{ display: "block" }}>
-              {element.name}<br />{element.email}
+              Name: {element.name}<br />Email: {element.email}<br />Message: {element.message}
             </span>
           </Popup>
         </Marker>
@@ -47,9 +47,8 @@ function LeafletMap(props) {
         <Marker key={indx} position={[elm.latitude, elm.longitude]} icon={landholderIcon}>
           <Popup>
             <span style={{ display: "block" }}>
-              {elm.name}<br />{elm.email}
+              Name: {elm.name}<br />Email: {elm.email}<br />Message: {elm.message}
             </span>
-
           </Popup>
         </Marker>
       )}

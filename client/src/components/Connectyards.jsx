@@ -18,7 +18,6 @@ function Connectyards() {
     lat: 53.631611,
     lng: -113.323975,
     zoom: 10.3,
-    markerData: [],
     growersData: [],
     landholdersData: []
   });
