@@ -1,6 +1,6 @@
 # YardShare YEG
 
-
+A web Application that connects Landholders who are interested in sharing their yards with the Growers
 
 ## Final Product
 
@@ -15,12 +15,10 @@
 
 - Node.js
 - Express
-- EJS
-- bcrypt
-- body-parser
-- cookie-session
+- Create React Application
 
 ## Getting Started
 
 - Install all dependencies (using the `npm install` command).
-- Run the development web server using the `node express_server.js` command.
+- Run the development web server using the `npm run start` command.
+- Run the client using the `npm run` command.
